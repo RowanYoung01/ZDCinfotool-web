@@ -20,7 +20,10 @@
       "Bash(powershell -Command \"Stop-Process -Name ZdcReference -Force -ErrorAction SilentlyContinue; Start-Sleep 2; Write-Host Done\")",
       "Bash(cat /c/Users/Owner/source/repos/ZDCReftool/Features/Docs/Models/*.cs)",
       "Bash(git remote:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"Add setup and launch README:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
