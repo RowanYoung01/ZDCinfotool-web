@@ -154,6 +154,12 @@ Add categories and PDFs in the `CustomDocuments` section of `appsettings.Develop
 
 ## Troubleshooting
 
+**`npm run css:build` failed / build error on first run** — Run the batch file as Administrator (right-click > Run as administrator). This is usually a permissions issue on first install. It only needs to happen once to install the Node packages.
+
+**`.csproj` file not found** — Make sure you are running `Start-ZDCReftool.bat` from inside the repository folder, not from a shortcut pointing to a different directory. The batch file handles this automatically if double-clicked from the correct location.
+
+**Downloaded as a ZIP and it won't run** — When extracting a GitHub ZIP, make sure you extract the *contents* of the zip so that `ZdcReference.csproj` and `Start-ZDCReftool.bat` are in the same folder. Avoid double-nested folders (e.g. `ZDCinfotool-web-main\ZDCinfotool-web-main\...`).
+
 **Port already in use** — Another instance may already be running. Check Task Manager for `ZdcReference.exe` and end it, then restart.
 
 **Page won't load** — Make sure the console window is still open and shows "Now listening on: http://localhost:5063". If it crashed, run the batch file again.
