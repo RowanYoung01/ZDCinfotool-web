@@ -20,7 +20,7 @@ A web-based reference tool for Washington ARTCC (ZDC) controllers on VATSIM. Bui
 Install the following before setting up:
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
-- [Node.js](https://nodejs.org/) (LTS version)
+- [Node.js](https://nodejs.org/) **v18 or higher** (LTS recommended)
 - [Git](https://git-scm.com/)
 
 ---
@@ -155,6 +155,8 @@ Add categories and PDFs in the `CustomDocuments` section of `appsettings.Develop
 ## Troubleshooting
 
 **`npm run css:build` failed / build error on first run** — Run the batch file as Administrator (right-click > Run as administrator). This is usually a permissions issue on first install. It only needs to happen once to install the Node packages.
+
+**`Cannot find module 'node:path'` error during npm install** — Your Node.js version is too old. Tailwind CSS 3.3+ requires Node.js 18 or higher. Download the latest LTS version from [nodejs.org](https://nodejs.org) and reinstall.
 
 **`.csproj` file not found** — Make sure you are running `Start-ZDCReftool.bat` from inside the repository folder, not from a shortcut pointing to a different directory. The batch file handles this automatically if double-clicked from the correct location.
 
