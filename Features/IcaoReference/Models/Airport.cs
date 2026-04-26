@@ -1,4 +1,4 @@
-﻿namespace ZoaReference.Features.IcaoReference.Models;
+﻿namespace ZdcReference.Features.IcaoReference.Models;
 
 public class Airport(string icaoId, string iataId, string localId, string name, string fir, double latitude, double longitude)
 {

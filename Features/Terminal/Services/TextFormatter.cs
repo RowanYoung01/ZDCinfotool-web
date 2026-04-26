@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace ZoaReference.Features.Terminal.Services;
+namespace ZdcReference.Features.Terminal.Services;
 
 public enum AnsiColor
 {

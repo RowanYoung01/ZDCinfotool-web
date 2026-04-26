@@ -1,10 +1,10 @@
 using System.Text;
-using ZoaReference.Features.Docs.Models;
-using ZoaReference.Features.Docs.Repositories;
-using ZoaReference.Features.Docs.Services;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Docs.Models;
+using ZdcReference.Features.Docs.Repositories;
+using ZdcReference.Features.Docs.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class ProcedureCommand(
     DocumentRepository documentRepository,
@@ -19,10 +19,10 @@ public class ProcedureCommand(
     public string Summary => "Search and open procedures/documents";
     public string Usage => "sop                          — List all document categories\n" +
                            "    sop <query>                  — Search documents by name\n" +
-                           "    sop OAK                      — Open Oakland ATCT SOP\n" +
-                           "    sop OAK 2-2                  — Open OAK SOP at section 2-2\n" +
-                           "    sop SJC \"IFR Departures\"     — Open SJC SOP at section\n" +
-                           "    sop SJC \"IFR Departures\" SJCE — Find SJCE in section\n" +
+                           "    sop DCA                      — Open Reagan National ATCT SOP\n" +
+                           "    sop DCA 2-2                  — Open DCA SOP at section 2-2\n" +
+                           "    sop IAD \"IFR Departures\"     — Open IAD SOP at section\n" +
+                           "    sop IAD \"IFR Departures\" IADS — Find IADS in section\n" +
                            "    sop --list                   — List all document categories";
 
     public Task<CommandResult> ExecuteAsync(CommandArgs args)

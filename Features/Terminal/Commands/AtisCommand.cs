@@ -1,9 +1,9 @@
 using System.Text;
-using ZoaReference.Features.DigitalAtis.Models;
-using ZoaReference.Features.DigitalAtis.Repositories;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.DigitalAtis.Models;
+using ZdcReference.Features.DigitalAtis.Repositories;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class AtisCommand(DigitalAtisRepository atisRepository) : ITerminalCommand
 {

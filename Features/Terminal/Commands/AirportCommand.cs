@@ -1,8 +1,8 @@
 using System.Text;
-using ZoaReference.Features.IcaoReference.Repositories;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.IcaoReference.Repositories;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class AirportCommand(AirportRepository airportRepository) : ITerminalCommand
 {

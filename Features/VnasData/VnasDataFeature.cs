@@ -1,9 +1,9 @@
 ﻿using Coravel.Scheduling.Schedule.Interfaces;
-using ZoaReference.FeatureUtilities.Interfaces;
-using ZoaReference.Features.VnasData.ScheduledJobs;
-using ZoaReference.Features.VnasData.Services;
+using ZdcReference.FeatureUtilities.Interfaces;
+using ZdcReference.Features.VnasData.ScheduledJobs;
+using ZdcReference.Features.VnasData.Services;
 
-namespace ZoaReference.Features.VnasData;
+namespace ZdcReference.Features.VnasData;
 
 public class VnasDataFeature : IServiceConfigurator, ISchedulerConfigurator
 {

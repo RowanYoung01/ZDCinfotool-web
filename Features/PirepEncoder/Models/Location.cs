@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ZoaReference.Features.PirepEncoder.Models;
+namespace ZdcReference.Features.PirepEncoder.Models;
 
 public sealed record LocationSegment
 {

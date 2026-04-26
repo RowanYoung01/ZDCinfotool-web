@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
-using ZoaReference.Features.Docs.Models;
+using ZdcReference.Features.Docs.Models;
 
-namespace ZoaReference.Features.Docs.Services;
+namespace ZdcReference.Features.Docs.Services;
 
 public record ProcedureMatch(Document Document, double Score);
 

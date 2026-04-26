@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(git clone:*)",
+      "Bash(cp:*)",
+      "Bash(/c/Users/Owner/source/repos/ZDCReftool/Assets/Data/v1/local_airports.dat:*)",
+      "Bash(ls:*)",
+      "Bash(xargs sed:*)",
+      "Bash(dotnet build:*)",
+      "Bash(npm install:*)",
+      "Bash(python3 -c \"import PyPDF2; r=PyPDF2.PdfReader\\(r''C:/Users/Owner/Downloads/PCT_7110_65H_CHG_1_with_TOC.pdf''\\); print\\(f''Pages: {len\\(r.pages\\)}''\\); print\\(r.pages[0].extract_text\\(\\)[:2000]\\)\")",
+      "Bash(python3 -c \"import pdfplumber; p=pdfplumber.open\\(r''C:/Users/Owner/Downloads/PCT_7110_65H_CHG_1_with_TOC.pdf''\\); print\\(f''Pages: {len\\(p.pages\\)}''\\); print\\(p.pages[0].extract_text\\(\\)[:2000]\\)\")",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"dotnet run\")",
+      "Bash(cmd /c \"taskkill /F /IM ZdcReference.exe\" 2>&1)",
+      "Bash(powershell -Command \"Stop-Process -Name ZdcReference -Force -ErrorAction SilentlyContinue; Start-Sleep 2; Write-Host Done\")",
+      "Bash(cat /c/Users/Owner/source/repos/ZDCReftool/Features/Docs/Models/*.cs)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

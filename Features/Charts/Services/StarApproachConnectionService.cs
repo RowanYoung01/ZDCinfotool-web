@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
-using ZoaReference.Features.Charts.Models;
+using ZdcReference.Features.Charts.Models;
 
-namespace ZoaReference.Features.Charts.Services;
+namespace ZdcReference.Features.Charts.Services;
 
 public partial class StarApproachConnectionService(
     CifpService cifpService,

@@ -1,6 +1,6 @@
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class OpenCommand : ITerminalCommand
 {

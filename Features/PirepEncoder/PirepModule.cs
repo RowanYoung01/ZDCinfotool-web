@@ -1,6 +1,6 @@
-using ZoaReference.FeatureUtilities.Interfaces;
+using ZdcReference.FeatureUtilities.Interfaces;
 
-namespace ZoaReference.Features.PirepEncoder;
+namespace ZdcReference.Features.PirepEncoder;
 
 public class PirepModule : IServiceConfigurator
 {

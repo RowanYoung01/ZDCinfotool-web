@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ZoaReference.Features.Docs.Models;
+namespace ZdcReference.Features.Docs.Models;
 
 public class CustomDocumentCategory
 {

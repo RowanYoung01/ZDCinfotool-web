@@ -1,6 +1,6 @@
-﻿using ZoaReference.Features.Scratchpads.Models;
+﻿using ZdcReference.Features.Scratchpads.Models;
 
-namespace ZoaReference.Features.Scratchpads.Repositories;
+namespace ZdcReference.Features.Scratchpads.Repositories;
 
 
 public class ScratchpadsRepository

@@ -1,4 +1,4 @@
-namespace ZoaReference.Features.Terminal.Services;
+namespace ZdcReference.Features.Terminal.Services;
 
 public record CommandArgs(
     string RawInput,

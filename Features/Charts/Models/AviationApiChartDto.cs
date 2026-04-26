@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ZoaReference.Features.Charts.Models;
+namespace ZdcReference.Features.Charts.Models;
 
 public class AviationApiChartDto
 {

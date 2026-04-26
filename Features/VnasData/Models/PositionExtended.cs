@@ -1,4 +1,4 @@
-﻿namespace ZoaReference.Features.VnasData.Models;
+﻿namespace ZdcReference.Features.VnasData.Models;
 
 public class PositionExtended(Position basePosition, string? tcp)
 {

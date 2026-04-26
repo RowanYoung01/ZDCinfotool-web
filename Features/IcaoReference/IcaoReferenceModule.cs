@@ -1,9 +1,9 @@
 ﻿using Coravel.Scheduling.Schedule.Interfaces;
-using ZoaReference.Features.IcaoReference.Repositories;
-using ZoaReference.Features.IcaoReference.ScheduledJobs;
-using ZoaReference.FeatureUtilities.Interfaces;
+using ZdcReference.Features.IcaoReference.Repositories;
+using ZdcReference.Features.IcaoReference.ScheduledJobs;
+using ZdcReference.FeatureUtilities.Interfaces;
 
-namespace ZoaReference.Features.IcaoReference;
+namespace ZdcReference.Features.IcaoReference;
 
 public class IcaoReferenceModule : IServiceConfigurator, ISchedulerConfigurator
 {

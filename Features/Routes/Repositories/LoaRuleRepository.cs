@@ -1,6 +1,6 @@
-﻿using ZoaReference.Features.Routes.Models;
+﻿using ZdcReference.Features.Routes.Models;
 
-namespace ZoaReference.Features.Routes.Repositories;
+namespace ZdcReference.Features.Routes.Repositories;
 
 public class LoaRuleRepository
 {

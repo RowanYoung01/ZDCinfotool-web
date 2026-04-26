@@ -1,8 +1,8 @@
 using System.Text;
-using ZoaReference.Features.Scratchpads.Repositories;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Scratchpads.Repositories;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class ScratchpadCommand(ScratchpadsRepository scratchpadsRepository) : ITerminalCommand
 {

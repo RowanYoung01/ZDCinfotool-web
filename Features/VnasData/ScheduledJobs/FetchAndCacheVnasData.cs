@@ -1,10 +1,10 @@
 ﻿using Coravel.Invocable;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.Charts.ScheduledJobs;
-using ZoaReference.Features.Charts.Services;
-using ZoaReference.Features.VnasData.Services;
+using ZdcReference.Features.Charts.ScheduledJobs;
+using ZdcReference.Features.Charts.Services;
+using ZdcReference.Features.VnasData.Services;
 
-namespace ZoaReference.Features.VnasData.ScheduledJobs;
+namespace ZdcReference.Features.VnasData.ScheduledJobs;
 
 public class FetchAndCacheVnasData(
     ILogger<FetchAndCacheVnasData> logger, 

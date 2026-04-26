@@ -1,6 +1,6 @@
 using UglyToad.PdfPig;
 
-namespace ZoaReference.Features.Charts.Services;
+namespace ZdcReference.Features.Charts.Services;
 
 /// <summary>
 /// Detects PDF text rotation by analyzing baseline angles of individual letters,

@@ -1,11 +1,11 @@
 using System.Text;
 using System.Text.RegularExpressions;
-using ZoaReference.Features.Charts.Services;
-using ZoaReference.Features.IcaoReference.Repositories;
-using ZoaReference.Features.Nasr.Services;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Charts.Services;
+using ZdcReference.Features.IcaoReference.Repositories;
+using ZdcReference.Features.Nasr.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public partial class ChartCommand(
     AviationApiChartService chartService,

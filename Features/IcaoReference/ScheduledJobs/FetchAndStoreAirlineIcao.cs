@@ -3,10 +3,10 @@ using Coravel.Invocable;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.IcaoReference.Models;
-using ZoaReference.Features.IcaoReference.Repositories;
+using ZdcReference.Features.IcaoReference.Models;
+using ZdcReference.Features.IcaoReference.Repositories;
 
-namespace ZoaReference.Features.IcaoReference.ScheduledJobs;
+namespace ZdcReference.Features.IcaoReference.ScheduledJobs;
 
 public class FetchAndStoreAirlineIcao(ILogger<FetchAndStoreAirlineIcao> logger, IHttpClientFactory httpClientFactory,
         IOptionsMonitor<AppSettings> appSettings, AirlineRepository airlineRepository)

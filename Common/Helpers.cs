@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ZoaReference.Common;
+namespace ZdcReference.Common;
 
 public static partial class Helpers
 {

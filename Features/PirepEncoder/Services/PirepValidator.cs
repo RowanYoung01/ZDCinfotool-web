@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using ZoaReference.Features.PirepEncoder.Models;
+using ZdcReference.Features.PirepEncoder.Models;
 
-namespace ZoaReference.Features.PirepEncoder.Services;
+namespace ZdcReference.Features.PirepEncoder.Services;
 
 public sealed record ValidationError(string Field, string Message);
 

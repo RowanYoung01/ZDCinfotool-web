@@ -1,4 +1,4 @@
-namespace ZoaReference.Features.PirepEncoder.Models;
+namespace ZdcReference.Features.PirepEncoder.Models;
 
 public sealed record PirepSettings
 {

@@ -1,9 +1,9 @@
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class MetarCommand(IHttpClientFactory httpClientFactory) : ITerminalCommand
 {

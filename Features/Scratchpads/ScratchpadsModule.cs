@@ -1,9 +1,9 @@
 ﻿using Coravel.Scheduling.Schedule.Interfaces;
-using ZoaReference.Features.Scratchpads.Repositories;
-using ZoaReference.Features.Scratchpads.ScheduledJobs;
-using ZoaReference.FeatureUtilities.Interfaces;
+using ZdcReference.Features.Scratchpads.Repositories;
+using ZdcReference.Features.Scratchpads.ScheduledJobs;
+using ZdcReference.FeatureUtilities.Interfaces;
 
-namespace ZoaReference.Features.Scratchpads;
+namespace ZdcReference.Features.Scratchpads;
 
 public class ScratchpadsModule : IServiceConfigurator, ISchedulerConfigurator
 {

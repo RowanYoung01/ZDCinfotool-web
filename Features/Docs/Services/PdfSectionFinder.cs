@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.Outline;
 
-namespace ZoaReference.Features.Docs.Services;
+namespace ZdcReference.Features.Docs.Services;
 
 /// <summary>
 /// Finds section page numbers within locally-cached procedure PDFs.

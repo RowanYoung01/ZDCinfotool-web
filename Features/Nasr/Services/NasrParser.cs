@@ -1,6 +1,6 @@
-using ZoaReference.Features.Nasr.Models;
+using ZdcReference.Features.Nasr.Models;
 
-namespace ZoaReference.Features.Nasr.Services;
+namespace ZdcReference.Features.Nasr.Services;
 
 public static class NasrParser
 {

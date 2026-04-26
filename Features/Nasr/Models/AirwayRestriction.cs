@@ -1,4 +1,4 @@
-namespace ZoaReference.Features.Nasr.Models;
+namespace ZdcReference.Features.Nasr.Models;
 
 public record AirwayRestriction(
     string AirwayId,

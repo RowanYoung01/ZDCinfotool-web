@@ -1,7 +1,7 @@
 using System.Text;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class HelpCommand(IServiceProvider serviceProvider) : ITerminalCommand
 {

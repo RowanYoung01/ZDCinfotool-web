@@ -1,10 +1,10 @@
 ﻿using System.Text.RegularExpressions;
 using Coravel.Invocable;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.Routes.Models;
-using ZoaReference.Features.Routes.Repositories;
+using ZdcReference.Features.Routes.Models;
+using ZdcReference.Features.Routes.Repositories;
 
-namespace ZoaReference.Features.Routes.ScheduledJobs;
+namespace ZdcReference.Features.Routes.ScheduledJobs;
 
 public partial class FetchAndStoreAliasRoutes(ILogger<FetchAndStoreAliasRoutes> logger,
         IHttpClientFactory httpClientFactory, IOptionsMonitor<AppSettings> appSettings, AliasRouteRuleRepository routeRuleRepository)
@@ -17,7 +17,7 @@ public partial class FetchAndStoreAliasRoutes(ILogger<FetchAndStoreAliasRoutes> 
         var httpClient = httpClientFactory.CreateClient();
         await using var responseStream = await httpClient.GetStreamAsync(appSettings.CurrentValue.Urls.AliasTextFile);
         using var reader = new StreamReader(responseStream);
-        logger.LogInformation("Fetched ZOA Alias file from: {url}", appSettings.CurrentValue.Urls.AliasTextFile);
+        logger.LogInformation("Fetched ZDC Alias file from: {url}", appSettings.CurrentValue.Urls.AliasTextFile);
 
         var rules = new List<AliasRouteRule>();
         while (!reader.EndOfStream)

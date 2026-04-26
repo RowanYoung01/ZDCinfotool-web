@@ -1,6 +1,6 @@
-﻿using ZoaReference.Features.Docs.Models;
+﻿using ZdcReference.Features.Docs.Models;
 
-namespace ZoaReference;
+namespace ZdcReference;
 
 public class AppSettings
 {

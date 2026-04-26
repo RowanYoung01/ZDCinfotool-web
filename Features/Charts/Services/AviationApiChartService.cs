@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.Charts.Models;
+using ZdcReference.Features.Charts.Models;
 
-namespace ZoaReference.Features.Charts.Services;
+namespace ZdcReference.Features.Charts.Services;
 
 public class AviationApiChartService(ILogger<AviationApiChartService> logger, IHttpClientFactory httpClientFactory, IOptionsMonitor<AppSettings> appSettings, IMemoryCache cache)
 {

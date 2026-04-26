@@ -1,8 +1,8 @@
 using System.Globalization;
 using System.Text;
-using ZoaReference.Features.PirepEncoder.Models;
+using ZdcReference.Features.PirepEncoder.Models;
 
-namespace ZoaReference.Features.PirepEncoder.Services;
+namespace ZdcReference.Features.PirepEncoder.Services;
 
 /// <summary>
 /// Produces a canonical encoded PIREP string from a <see cref="Pirep"/>.

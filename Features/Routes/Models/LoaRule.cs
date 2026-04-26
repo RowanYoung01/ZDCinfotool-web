@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ZoaReference.Features.Routes.Models;
+namespace ZdcReference.Features.Routes.Models;
 
 public class LoaRule
 {

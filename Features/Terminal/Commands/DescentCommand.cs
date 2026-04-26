@@ -1,8 +1,8 @@
 using System.Text;
-using ZoaReference.Features.Nasr.Services;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Nasr.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class DescentCommand(NasrDataService nasrDataService) : ITerminalCommand
 {

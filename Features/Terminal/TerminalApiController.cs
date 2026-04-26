@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal;
+namespace ZdcReference.Features.Terminal;
 
 [ApiController]
 [Route("api/v1/terminal")]

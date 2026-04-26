@@ -1,10 +1,10 @@
 using System.Text;
 using System.Text.RegularExpressions;
-using ZoaReference.Features.Nasr.Models;
-using ZoaReference.Features.Nasr.Services;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Nasr.Models;
+using ZdcReference.Features.Nasr.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public partial class MeaCommand(NasrDataService nasrDataService) : ITerminalCommand
 {

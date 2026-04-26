@@ -1,6 +1,6 @@
-﻿using ZoaReference.FeatureUtilities.Interfaces;
+﻿using ZdcReference.FeatureUtilities.Interfaces;
 
-namespace ZoaReference.Features.Healthcheck;
+namespace ZdcReference.Features.Healthcheck;
 
 public class HealthcheckModule : IServiceConfigurator
 {

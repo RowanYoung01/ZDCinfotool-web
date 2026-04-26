@@ -1,7 +1,7 @@
 using Coravel.Invocable;
-using ZoaReference.Features.Nasr.Services;
+using ZdcReference.Features.Nasr.Services;
 
-namespace ZoaReference.Features.Nasr.ScheduledJobs;
+namespace ZdcReference.Features.Nasr.ScheduledJobs;
 
 public class FetchNasrData(NasrDataService nasrDataService) : IInvocable
 {

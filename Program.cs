@@ -1,8 +1,8 @@
 using Coravel;
-using ZoaReference;
-using ZoaReference.Components;
-using ZoaReference.Features.Docs.ScheduledJobs;
-using ZoaReference.FeatureUtilities;
+using ZdcReference;
+using ZdcReference.Components;
+using ZdcReference.Features.Docs.ScheduledJobs;
+using ZdcReference.FeatureUtilities;
 
 var builder = WebApplication.CreateBuilder(args);
 if ((Environment.GetEnvironmentVariable("SENTRY_DSN") ?? "") != "") {
@@ -50,8 +50,11 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 var cacheMaxAgeOneHour = (60 * 60).ToString();
+var provider = new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider();
+provider.Mappings[".dat"] = "text/plain";
 app.UseStaticFiles(new StaticFileOptions
 {
+    ContentTypeProvider = provider,
     OnPrepareResponse = ctx =>
     {
         ctx.Context.Response.Headers.Append(

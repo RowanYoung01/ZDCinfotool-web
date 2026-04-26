@@ -1,10 +1,10 @@
 using System.Text;
-using ZoaReference.Features.Routes.Models;
-using ZoaReference.Features.Routes.Repositories;
-using ZoaReference.Features.Routes.Services;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Routes.Models;
+using ZdcReference.Features.Routes.Repositories;
+using ZdcReference.Features.Routes.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class RouteCommand(
     FlightAwareRouteService flightAwareRouteService,

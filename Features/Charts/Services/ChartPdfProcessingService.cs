@@ -4,10 +4,10 @@ using Microsoft.Extensions.Options;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using Sentry;
-using ZoaReference.Features.Charts.Models;
-using ZoaReference.Features.Docs.Services;
+using ZdcReference.Features.Charts.Models;
+using ZdcReference.Features.Docs.Services;
 
-namespace ZoaReference.Features.Charts.Services;
+namespace ZdcReference.Features.Charts.Services;
 
 public class ChartPdfProcessingService(
     IHttpClientFactory httpClientFactory,

@@ -1,8 +1,8 @@
 using System.Text;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class AirportsCommand(IOptionsMonitor<AppSettings> appSettings) : ITerminalCommand
 {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-using ZoaReference.Features.PirepEncoder.Models;
+using ZdcReference.Features.PirepEncoder.Models;
 
-namespace ZoaReference.Features.PirepEncoder.Services;
+namespace ZdcReference.Features.PirepEncoder.Services;
 
 public enum ParseWarningLevel
 {

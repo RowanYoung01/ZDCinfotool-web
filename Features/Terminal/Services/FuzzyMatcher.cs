@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace ZoaReference.Features.Terminal.Services;
+namespace ZdcReference.Features.Terminal.Services;
 
 /// <summary>
 /// Fuzzy matching utilities ported from the standalone CLI's <c>fuzzy.py</c>.

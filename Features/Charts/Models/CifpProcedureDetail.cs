@@ -1,4 +1,4 @@
-namespace ZoaReference.Features.Charts.Models;
+namespace ZdcReference.Features.Charts.Models;
 
 public enum CifpProcedureType
 {

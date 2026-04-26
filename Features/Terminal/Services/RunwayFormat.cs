@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace ZoaReference.Features.Terminal.Services;
+namespace ZdcReference.Features.Terminal.Services;
 
 /// <summary>
 /// Shared helpers for handling runway identifiers where the user may type

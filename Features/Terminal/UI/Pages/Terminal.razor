@@ -1,14 +1,14 @@
 @page "/terminal"
 @rendermode InteractiveServer
 @using Microsoft.Extensions.Options
-@using ZoaReference.Features.Terminal.Services
+@using ZdcReference.Features.Terminal.Services
 @implements IAsyncDisposable
 
 @inject CommandDispatcher Dispatcher
 @inject IJSRuntime JS
 @inject IOptions<AppSettings> AppSettingsOptions
 
-<PageTitle>Terminal - ZOA Reference</PageTitle>
+<PageTitle>Terminal - ZDC Reference</PageTitle>
 
 <div @ref="_splitContainer" class="flex flex-col lg:flex-row h-[calc(100vh-4rem)] p-2">
     <div @ref="_terminalContainer" class="min-w-0 rounded bg-black overflow-hidden"

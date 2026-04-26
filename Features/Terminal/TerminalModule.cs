@@ -1,8 +1,8 @@
-using ZoaReference.Features.Terminal.Commands;
-using ZoaReference.Features.Terminal.Services;
-using ZoaReference.FeatureUtilities.Interfaces;
+using ZdcReference.Features.Terminal.Commands;
+using ZdcReference.Features.Terminal.Services;
+using ZdcReference.FeatureUtilities.Interfaces;
 
-namespace ZoaReference.Features.Terminal;
+namespace ZdcReference.Features.Terminal;
 
 public class TerminalModule : IServiceConfigurator
 {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ZoaReference.Features.Charts.Services;
+using ZdcReference.Features.Charts.Services;
 
-namespace ZoaReference.Features.Charts;
+namespace ZdcReference.Features.Charts;
 
 [ApiController]
 [Route("api/v1/charts")]

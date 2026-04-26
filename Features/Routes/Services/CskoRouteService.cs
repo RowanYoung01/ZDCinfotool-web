@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.Routes.Models;
+using ZdcReference.Features.Routes.Models;
 
-namespace ZoaReference.Features.Routes.Services;
+namespace ZdcReference.Features.Routes.Services;
 
 public class CskoRouteService(
     IHttpClientFactory httpClientFactory,

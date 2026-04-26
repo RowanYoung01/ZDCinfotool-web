@@ -1,9 +1,9 @@
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Caching.Memory;
-using ZoaReference.Features.Charts.Models;
+using ZdcReference.Features.Charts.Models;
 
-namespace ZoaReference.Features.Charts.Services;
+namespace ZdcReference.Features.Charts.Services;
 
 public partial class CifpService(
     ILogger<CifpService> logger,

@@ -1,4 +1,4 @@
-namespace ZoaReference.Features.Nasr.Services;
+namespace ZdcReference.Features.Nasr.Services;
 
 public static class AiracCycleHelper
 {

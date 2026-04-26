@@ -1,4 +1,4 @@
-namespace ZoaReference.Components.Layout;
+namespace ZdcReference.Components.Layout;
 
 public record NavItem(string Href, string Label);
 

@@ -1,9 +1,9 @@
 using Coravel.Scheduling.Schedule.Interfaces;
-using ZoaReference.Features.Nasr.ScheduledJobs;
-using ZoaReference.Features.Nasr.Services;
-using ZoaReference.FeatureUtilities.Interfaces;
+using ZdcReference.Features.Nasr.ScheduledJobs;
+using ZdcReference.Features.Nasr.Services;
+using ZdcReference.FeatureUtilities.Interfaces;
 
-namespace ZoaReference.Features.Nasr;
+namespace ZdcReference.Features.Nasr;
 
 public class NasrFeature : IServiceConfigurator, ISchedulerConfigurator
 {

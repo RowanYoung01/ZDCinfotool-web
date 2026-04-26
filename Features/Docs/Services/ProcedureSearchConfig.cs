@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Options;
 
-namespace ZoaReference.Features.Docs.Services;
+namespace ZdcReference.Features.Docs.Services;
 
 public class ProcedureSearchConfig
 {

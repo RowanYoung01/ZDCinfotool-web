@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace ZoaReference.Features.Terminal.Services;
+namespace ZdcReference.Features.Terminal.Services;
 
 public class CommandDispatcher
 {

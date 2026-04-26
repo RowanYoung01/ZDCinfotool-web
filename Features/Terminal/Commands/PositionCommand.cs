@@ -1,9 +1,9 @@
 using System.Text;
-using ZoaReference.Features.Terminal.Services;
-using ZoaReference.Features.VnasData.Models;
-using ZoaReference.Features.VnasData.Services;
+using ZdcReference.Features.Terminal.Services;
+using ZdcReference.Features.VnasData.Models;
+using ZdcReference.Features.VnasData.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class PositionCommand(CachedVnasDataService vnasDataService) : ITerminalCommand
 {
@@ -22,7 +22,7 @@ public class PositionCommand(CachedVnasDataService vnasDataService) : ITerminalC
         }
 
         var query = string.Join(" ", args.Positional);
-        var facilities = await vnasDataService.GetArtccFacilities("ZOA");
+        var facilities = await vnasDataService.GetArtccFacilities("ZDC");
 
         var positions = facilities
             .SelectMany(f => f.Facility.Positions?.Select(p =>

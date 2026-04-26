@@ -1,7 +1,7 @@
 using System.Text;
-using ZoaReference.Features.PirepEncoder.Models;
+using ZdcReference.Features.PirepEncoder.Models;
 
-namespace ZoaReference.Features.PirepEncoder.Services;
+namespace ZdcReference.Features.PirepEncoder.Services;
 
 public static class TurbulenceFormatter
 {

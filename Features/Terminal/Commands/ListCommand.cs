@@ -1,9 +1,9 @@
 using System.Text;
-using ZoaReference.Features.Charts.Services;
-using ZoaReference.Features.IcaoReference.Repositories;
-using ZoaReference.Features.Terminal.Services;
+using ZdcReference.Features.Charts.Services;
+using ZdcReference.Features.IcaoReference.Repositories;
+using ZdcReference.Features.Terminal.Services;
 
-namespace ZoaReference.Features.Terminal.Commands;
+namespace ZdcReference.Features.Terminal.Commands;
 
 public class ListCommand(AviationApiChartService chartService, AirportRepository airportRepository) : ITerminalCommand
 {

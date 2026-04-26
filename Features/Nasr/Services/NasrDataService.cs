@@ -1,9 +1,9 @@
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Caching.Memory;
-using ZoaReference.Features.Nasr.Models;
+using ZdcReference.Features.Nasr.Models;
 
-namespace ZoaReference.Features.Nasr.Services;
+namespace ZdcReference.Features.Nasr.Services;
 
 public partial class NasrDataService(
     ILogger<NasrDataService> logger,

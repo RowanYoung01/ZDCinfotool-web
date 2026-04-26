@@ -1,9 +1,9 @@
 ﻿using Coravel.Invocable;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.Scratchpads.Models;
-using ZoaReference.Features.Scratchpads.Repositories;
+using ZdcReference.Features.Scratchpads.Models;
+using ZdcReference.Features.Scratchpads.Repositories;
 
-namespace ZoaReference.Features.Scratchpads.ScheduledJobs;
+namespace ZdcReference.Features.Scratchpads.ScheduledJobs;
 
 
 public class FetchAndStoreScratchpads(

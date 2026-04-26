@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace ZoaReference.Features.Docs.Services;
+namespace ZdcReference.Features.Docs.Services;
 
 /// <summary>
 /// Parsed procedure query with optional section and search terms.

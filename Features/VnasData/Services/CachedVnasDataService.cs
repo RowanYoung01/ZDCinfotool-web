@@ -2,9 +2,9 @@
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using ZoaReference.Features.VnasData.Models;
+using ZdcReference.Features.VnasData.Models;
 
-namespace ZoaReference.Features.VnasData.Services;
+namespace ZdcReference.Features.VnasData.Services;
 
 public class CachedVnasDataService(
     IMemoryCache cache,
