@@ -62,6 +62,7 @@ public class AppSettings
         public string LocalAirpotsDat{ get; set; } = string.Empty;
         public string LoaFile { get; set; } = string.Empty;
         public string ZoaDocumentsApiEndpoint { get; set; } = string.Empty;
+        public string VzdcDocumentsApiEndpoint { get; set; } = string.Empty;
         public string ScratchpadsJson { get; set; } = string.Empty;
         public string CskoRouteBase { get; set; } = string.Empty;
     }

@@ -3,22 +3,19 @@ using System.Text.RegularExpressions;
 using Coravel.Invocable;
 using CsvHelper;
 using CsvHelper.Configuration;
-using Microsoft.Extensions.Options;
 using ZdcReference.Features.Routes.Models;
 using ZdcReference.Features.Routes.Repositories;
 
 namespace ZdcReference.Features.Routes.ScheduledJobs;
 
-public class FetchAndStoreLoaRules(ILogger<FetchAndStoreLoaRules> logger, IHttpClientFactory httpClientFactory, LoaRuleRepository loaRules, IOptionsMonitor<AppSettings> appSettings) : IInvocable
+public class FetchAndStoreLoaRules(ILogger<FetchAndStoreLoaRules> logger, LoaRuleRepository loaRules, IWebHostEnvironment env) : IInvocable
 {
-    public async Task Invoke()
+    public Task Invoke()
     {
-        // TODO need to add some try catch exception handling?
-        
-        var httpClient = httpClientFactory.CreateClient();
-        await using var responseStream = await httpClient.GetStreamAsync(appSettings.CurrentValue.Urls.LoaFile);
+        var loaPath = Path.Combine(env.WebRootPath, "data", "v1", "loa.csv");
+        using var responseStream = File.OpenRead(loaPath);
         using var reader = new StreamReader(responseStream);
-        logger.LogInformation("Fetched LOA file from: {url}", appSettings.CurrentValue.Urls.LoaFile);
+        logger.LogInformation("Read LOA file from: {path}", loaPath);
         
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
         csv.Context.RegisterClassMap<LoaRuleMap>();
@@ -26,6 +23,7 @@ public class FetchAndStoreLoaRules(ILogger<FetchAndStoreLoaRules> logger, IHttpC
         
         loaRules.ClearRules();
         loaRules.AddRules(records);
+        return Task.CompletedTask;
     }
 
     private class LoaRuleMap : ClassMap<LoaRule>

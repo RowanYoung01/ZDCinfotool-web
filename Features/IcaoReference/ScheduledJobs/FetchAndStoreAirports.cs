@@ -7,7 +7,7 @@ using ZdcReference.Features.IcaoReference.Repositories;
 
 namespace ZdcReference.Features.IcaoReference.ScheduledJobs;
 
-public partial class FetchAndStoreAirports(ILogger<FetchAndStoreAirports> logger, IHttpClientFactory httpClientFactory, IOptionsMonitor<AppSettings> appSettings, AirportRepository airportRepository) : IInvocable
+public partial class FetchAndStoreAirports(ILogger<FetchAndStoreAirports> logger, IHttpClientFactory httpClientFactory, IOptionsMonitor<AppSettings> appSettings, AirportRepository airportRepository, IWebHostEnvironment env) : IInvocable
 {
     public async Task Invoke()
     {
@@ -40,10 +40,10 @@ public partial class FetchAndStoreAirports(ILogger<FetchAndStoreAirports> logger
             }
         }
 
-        var localAirportsUrl = appSettings.CurrentValue.Urls.LocalAirpotsDat;
+        var localAirportsPath = Path.Combine(env.WebRootPath, "data", "v1", "local_airports.dat");
         try
         {
-            var localAirportsResponseStream = await httpClient.GetStringAsync(localAirportsUrl);
+            var localAirportsResponseStream = await File.ReadAllTextAsync(localAirportsPath);
             using var localAirportsReader = new StringReader(localAirportsResponseStream);
             for (var line = localAirportsReader.ReadLine(); line is not null; line = localAirportsReader.ReadLine())
             {
@@ -55,9 +55,9 @@ public partial class FetchAndStoreAirports(ILogger<FetchAndStoreAirports> logger
                 parseAndAddAirport(line);
             }
         }
-        catch (HttpRequestException e)
+        catch (IOException e)
         {
-            logger.LogError("Error while fetching the local airports data: {ex}", e.ToString());
+            logger.LogError("Error while reading the local airports data: {ex}", e.ToString());
         }
         catch (Exception e)
         {

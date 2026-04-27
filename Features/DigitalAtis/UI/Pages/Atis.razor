@@ -10,9 +10,24 @@
 
 <PageTitle>ATIS - @Settings.Value.ARTCC Reference</PageTitle>
 
+<div class="flex gap-2 mb-4">
+    @foreach (var option in _filterOptions)
+    {
+        <button class="px-3 py-1 text-sm border @(_filter == option ? "border-blue-500 text-blue-400" : "border-slate-600 text-slate-400 hover:border-slate-400")"
+                @onclick="() => SetFilter(option)">
+            @option
+        </button>
+    }
+</div>
+
 @if (_atisList is not null)
 {
-    foreach (var atis in _atisList)
+    var artccIcaos = Settings.Value.ArtccAirports.All.ToHashSet();
+    var filtered = _filteredAtisList.ToList();
+    var artccAtis = filtered.Where(a => artccIcaos.Contains(a.IcaoId)).ToList();
+    var outsideAtis = filtered.Where(a => !artccIcaos.Contains(a.IcaoId)).ToList();
+
+    foreach (var atis in artccAtis)
     {
         <div class="flex mb-2">
             <div class="flex flex-col items-center w-20 shrink-0 justify-center">
@@ -36,12 +51,51 @@
             </div>
         </div>
     }
+
+    @if (outsideAtis.Count > 0)
+    {
+        <hr class="border-slate-600 my-3" />
+        foreach (var atis in outsideAtis)
+        {
+            <div class="flex mb-2">
+                <div class="flex flex-col items-center w-20 shrink-0 justify-center">
+                    <span class="text-2xl">@atis.IcaoId[1..]</span>
+                </div>
+                <div class="flex items-center border border-slate-600 p-1.5 text-sm w-20 shrink-0 justify-center">
+                    <div class="flex flex-col items-center">
+                        @if (atis.Type != Models.Atis.AtisType.Combined)
+                        {
+                            <span class="text-sm">@atis.Type</span>
+                        }
+                        <span class="font-mono text-2xl text-yellow-500">@atis.InfoLetter</span>
+                        <span class="text-sm">@GetIssueTimeString(atis)</span>
+                    </div>
+                </div>
+                <div class="ml-3 flex items-center border border-slate-600 p-1.5 text-xs w-64 shrink-0">
+                    <span>@atis.WeatherText</span>
+                </div>
+                <div class="ml-3 flex items-center border border-slate-600 p-1.5 text-sm grow">
+                    <span>@atis.StatusText</span>
+                </div>
+            </div>
+        }
+    }
 }
 
 
 @code {
     private IEnumerable<string> _airports => Settings.Value.ArtccAirports.AtisAirports;
     private List<Models.Atis>? _atisList;
+
+    private static readonly string[] _filterOptions = ["All", "Arrival", "Departure"];
+    private string _filter = "All";
+
+    private IEnumerable<Models.Atis> _filteredAtisList => _atisList?.Where(a => _filter switch
+    {
+        "Arrival" => a.Type is Models.Atis.AtisType.Arrival or Models.Atis.AtisType.Combined,
+        "Departure" => a.Type is Models.Atis.AtisType.Departure or Models.Atis.AtisType.Combined,
+        _ => true
+    }) ?? [];
 
     private static string GetIssueTimeString(Models.Atis atis)
     {
@@ -64,6 +118,11 @@
     private void UpdateNewLetter(object? sender, NewInfoLetterArgs e)
     {
         UpdateDisplayedAtis();
+    }
+
+    private void SetFilter(string filter)
+    {
+        _filter = filter;
     }
 
     private void UpdateDisplayedAtis()

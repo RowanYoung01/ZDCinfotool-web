@@ -1,5 +1,5 @@
-﻿using Coravel.Invocable;
-using Microsoft.Extensions.Options;
+﻿using System.Text.Json;
+using Coravel.Invocable;
 using ZdcReference.Features.Scratchpads.Models;
 using ZdcReference.Features.Scratchpads.Repositories;
 
@@ -8,27 +8,26 @@ namespace ZdcReference.Features.Scratchpads.ScheduledJobs;
 
 public class FetchAndStoreScratchpads(
     ILogger<FetchAndStoreScratchpads> logger,
-    IHttpClientFactory httpClientFactory,
-    IOptionsMonitor<AppSettings> appSettings,
+    IWebHostEnvironment env,
     ScratchpadsRepository scratchpadsRepository)
     : IInvocable
 {
     public async Task Invoke()
     {
-        var url = appSettings.CurrentValue.Urls.ScratchpadsJson;
+        var scratchpadsPath = Path.Combine(env.WebRootPath, "data", "v1", "scratchpads.json");
         try
         {
             logger.LogInformation("Starting scratchpad fetch and update task");
-            using var httpClient = httpClientFactory.CreateClient();
-            var scratchpads = await httpClient.GetFromJsonAsync<List<AirportScratchpad>>(url);
+            await using var fileStream = File.OpenRead(scratchpadsPath);
+            var scratchpads = await JsonSerializer.DeserializeAsync<List<AirportScratchpad>>(fileStream);
 
             if (scratchpads is null)
             {
-                logger.LogWarning("Error while fetching scratchpads: null JSON deserialization from {url}", url);
+                logger.LogWarning("Error while reading scratchpads: null JSON deserialization from {path}", scratchpadsPath);
                 return;
             }
 
-            logger.LogInformation("Successfully fetched scratchpads from {url}", url);
+            logger.LogInformation("Successfully read scratchpads from {path}", scratchpadsPath);
 
             scratchpadsRepository.ClearAirports();
             logger.LogInformation("Deleted all scratchpads");
