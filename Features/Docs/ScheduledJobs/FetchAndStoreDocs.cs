@@ -71,6 +71,13 @@ public class FetchAndStoreDocs(
                 var pdfName = GetPdfNameFromUrl(doc.Url);
                 var localPdfPath = Path.ChangeExtension(Path.Combine(PdfFolderPath, pdfName), ".pdf");
 
+                // If the URL is relative (starts with /), the file is already in wwwroot — no fetch needed
+                if (doc.Url.StartsWith('/'))
+                {
+                    logger.LogInformation("Skipping fetch for local PDF at {path}", localPdfPath);
+                    continue;
+                }
+
                 // Always write new file
                 try
                 {
@@ -94,6 +101,8 @@ public class FetchAndStoreDocs(
 
     private static string GetPdfNameFromUrl(string url)
     {
+        if (url.StartsWith('/'))
+            return Path.GetFileName(url);
         var uri = new Uri(url);
         return Path.GetFileName(uri.AbsolutePath);
     }
