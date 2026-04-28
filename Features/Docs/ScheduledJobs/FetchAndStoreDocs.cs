@@ -41,11 +41,7 @@ public class FetchAndStoreDocs(
                 var vzdcDocs = await httpClient.GetFromJsonAsync<List<VzdcDocument>>(vzdcApiUrl);
                 if (vzdcDocs is not null && vzdcDocs.Count > 0)
                 {
-                    compiledDocCategories.Add(new DocumentCategory
-                    {
-                        Name = "ZDC Publications",
-                        Documents = vzdcDocs.Select(d => new Document(d.Name, d.Url)).ToList()
-                    });
+                    compiledDocCategories.AddRange(CategorizeVzdcDocuments(vzdcDocs));
                 }
                 else
                 {
@@ -105,6 +101,82 @@ public class FetchAndStoreDocs(
             return Path.GetFileName(url);
         var uri = new Uri(url);
         return Path.GetFileName(uri.AbsolutePath);
+    }
+
+    private static List<DocumentCategory> CategorizeVzdcDocuments(List<VzdcDocument> docs)
+    {
+        var categoryRules = new List<(string Name, Func<VzdcDocument, bool> Match)>
+        {
+            ("General Policy & Facility Administration",
+                d => d.Name.StartsWith("vZDC-A-")),
+
+            // Process bulletins before Tower SOPs to avoid "Tower Responsibilities" mismatch
+            ("Controller Bulletins",
+                d => d.Name.StartsWith("vZDC-") && d.Name.Contains("-B-")),
+
+            ("Charts",
+                d => d.Name.StartsWith("vZDC-C-") || d.Name.StartsWith("vZDC-PCT-C-")),
+
+            ("Quick Reference Job Aids",
+                d => d.Name.StartsWith("vZDC-Q-")),
+
+            ("Enroute Standard Operating Procedures & Reference",
+                d => d.Name.StartsWith("vZDC-ZDC-P-") || d.Name.Contains("Deconsolidation")),
+
+            ("ATC Tower Standard Operating Procedures & Reference",
+                d => d.Name.Contains(" Tower") && !d.Name.Contains("ATCT/TRACON")),
+
+            ("ATCT/TRACON Standard Operating Procedures & Reference",
+                d => d.Name.Contains("ATCT/TRACON")),
+
+            ("TRACON Standard Operating Procedures & Reference",
+                d => d.Name.StartsWith("PCT ")),
+
+            ("Letters of Agreement",
+                d => d.Name.StartsWith("ZBW |") || d.Name.StartsWith("ZID |") ||
+                     d.Name.StartsWith("ZJX |") || d.Name.StartsWith("ZNY |") ||
+                     d.Name.StartsWith("ZOB |") || d.Name.StartsWith("ZTL |") ||
+                     d.Name.StartsWith("PCT-ZNY |") || d.Name.StartsWith("PHL-PCT |") ||
+                     d.Name.StartsWith("USNv |")),
+
+            ("Washington Special Flight Rules Area (SFRA)",
+                d => d.Name.Contains("SFRA")),
+
+            ("vATIS",
+                d => d.Name.Contains("ATIS")),
+
+            ("vVSCS",
+                d => d.Name.Contains("VSCS") || d.Name.StartsWith("User Guide")),
+        };
+
+        var assigned = new HashSet<string>();
+        var result = new List<DocumentCategory>();
+
+        foreach (var (name, match) in categoryRules)
+        {
+            var matched = docs.Where(d => !assigned.Contains(d.Key) && match(d)).ToList();
+            if (matched.Count == 0) continue;
+
+            result.Add(new DocumentCategory
+            {
+                Name = name,
+                Documents = matched.Select(d => new Document(d.Name, d.Url)).ToList()
+            });
+            foreach (var d in matched)
+                assigned.Add(d.Key);
+        }
+
+        var unmatched = docs.Where(d => !assigned.Contains(d.Key)).ToList();
+        if (unmatched.Count > 0)
+        {
+            result.Add(new DocumentCategory
+            {
+                Name = "ZDC Publications",
+                Documents = unmatched.Select(d => new Document(d.Name, d.Url)).ToList()
+            });
+        }
+
+        return result;
     }
 
     private async Task WriteRemotePdfToLocal(string url, string path)
